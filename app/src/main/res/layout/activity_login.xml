@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="-5dp"
+    android:paddingRight="-5dp"
+    tools:context="com.party.party.Login">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"/>
+
+
+    <ImageView
+
+        android:background="#fff"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="71dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:background="@drawable/logo"
+        android:layout_width="90dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="77dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/botao_entrar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#F176AD"
+        android:text="ENTRAR"
+        android:textColor="#fff"
+
+        android:layout_marginBottom="179dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Usuário: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textUsuario"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/logo"
+        android:textSize="18dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/usuario"
+        android:layout_below="@+id/textUsuario"
+        android:layout_alignStart="@+id/textUsuario" />
+
+    <TextView
+        android:text="Senha: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textsenha"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/usuario"
+        android:textSize="18dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/textsenha"
+        android:layout_alignEnd="@+id/usuario"
+        android:id="@+id/senha" />
+
+
+</RelativeLayout>
