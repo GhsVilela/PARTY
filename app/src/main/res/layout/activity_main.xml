@@ -36,11 +36,11 @@
         android:textColor="#fff"
 
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/botao_entrar"
+        android:layout_alignStart="@+id/botao_confirmar"
         android:layout_marginBottom="58dp" />
 
     <Button
-        android:id="@+id/botao_entrar"
+        android:id="@+id/botao_confirmar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="#F176AD"

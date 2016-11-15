@@ -62,15 +62,6 @@
         android:layout_below="@+id/usuario"
         android:textSize="18dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:layout_below="@+id/textsenha"
-        android:layout_alignEnd="@+id/usuario"
-        android:id="@+id/senha" />
-
     <TextView
         android:text="Confirmação da Senha: "
         android:layout_width="wrap_content"
@@ -110,18 +101,6 @@
         android:layout_alignStart="@+id/textUsuario" />
 
 
-    <Button
-        android:id="@+id/botao_entrar"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="#F176AD"
-        android:text="ENTRAR"
-        android:textColor="#fff"
-
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textUsuario"
-        android:layout_marginBottom="14dp" />
-
     <CheckBox
         android:text="Aceito os "
         android:layout_width="wrap_content"
@@ -140,6 +119,27 @@
         android:layout_alignBaseline="@+id/checkBox"
         android:layout_alignBottom="@+id/checkBox"
         android:layout_toEndOf="@+id/checkBox" />
+
+    <Button
+        android:id="@+id/botao_confirmar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="#F176AD"
+        android:text="ENTRAR"
+        android:textColor="#fff"
+
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/textUsuario" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/senha"
+        android:layout_below="@+id/textsenha"
+        android:layout_alignStart="@+id/textsenha" />
 
 
 </RelativeLayout>

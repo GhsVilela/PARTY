@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/botao_entrar"
+        android:id="@+id/botao_confirmar"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="#F176AD"

@@ -3,13 +3,6 @@ package com.party.party;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +18,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         btnLocalizar = (Button) findViewById(R.id.botao_ponto_maps);
-        btnEntrar = (Button) findViewById(R.id.botao_entrar);
+        btnEntrar = (Button) findViewById(R.id.botao_confirmar);
         btnRegistrar = (Button) findViewById(R.id.botao_registrar);
 
         btnLocalizar.setOnClickListener(new View.OnClickListener(){
