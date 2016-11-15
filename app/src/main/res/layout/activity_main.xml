@@ -46,7 +46,6 @@
         android:background="#F176AD"
         android:text="ENTRAR"
         android:textColor="#fff"
-
         android:layout_above="@+id/botao_registrar"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp" />

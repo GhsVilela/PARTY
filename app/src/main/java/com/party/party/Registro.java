@@ -18,7 +18,7 @@ public class Registro extends AppCompatActivity {
         txtTermos.setOnClickListener(new View.OnClickListener(){
 
                                             public void onClick(View v) {
-                                                //  Intent it = new Intent(MainActivity.this, MapsActivity.class);
+
                                                 Intent it = new Intent(Registro.this, TermosDeUso.class);
                                                 startActivity(it);
                                             }
