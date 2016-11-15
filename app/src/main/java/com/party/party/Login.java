@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    btnEntrar = (Button)findViewById(R.id.botao_confirmar);
+    btnEntrar = (Button)findViewById(R.id.botao_entrar);
      //   nome = (EditText) findViewById(R.id.)
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
