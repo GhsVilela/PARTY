@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    btnEntrar = (Button)findViewById(R.id.botao_entrar);
+    btnEntrar = (Button)findViewById(R.id.botao_confirmar);
      //   nome = (EditText) findViewById(R.id.)
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
@@ -29,23 +29,6 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Login.this,PerfilUsuario.class);
                 startActivity(intent);
-
-
-                String senha = "admin";
-
-                MessageDigest algorithm = null;
-                try {
-                    algorithm = MessageDigest.getInstance("SHA-256");
-                    byte messageDigest[] = algorithm.digest(senha.getBytes("UTF-8"));
-                    System.out.println(messageDigest);
-                } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-
-
-
 
 
             }
