@@ -31,6 +31,7 @@ public class Registro extends Activity {
     String insertUrl = "http://partyiftm.16mb.com/bd/insertUser.php";
     RequestQueue requestQueue;
     EditText usuario, senha, senhaConfirma, email;
+    int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,8 @@ public class Registro extends Activity {
 
                             System.out.println("Ok");
 
+                            flag = 1;
+
                         return parameters;
                         }
                         else
@@ -100,8 +103,19 @@ public class Registro extends Activity {
                         return null;
                     }
                 };
-                //Toast.makeText(context, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
                 requestQueue.add(request);
+                System.out.println("Flag:::: " + flag);
+
+                if(flag==0)
+                {
+                    Toast.makeText(context, "Senhas não batem!", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(context, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                }
+                //
+
 
             }
 
