@@ -50,7 +50,10 @@
         android:ems="10"
         android:id="@+id/usuario"
         android:layout_below="@+id/textUsuario"
-        android:layout_alignStart="@+id/textUsuario" />
+        android:layout_alignStart="@+id/textUsuario"
+        android:hint="6-15 Caracteres"
+
+        />
 
     <TextView
         android:text="Senha: "
@@ -98,7 +101,8 @@
         android:ems="10"
         android:id="@+id/email"
         android:layout_below="@+id/textemail"
-        android:layout_alignStart="@+id/textUsuario" />
+        android:layout_alignStart="@+id/textUsuario"
+        android:hint="Digite um Email Válido" />
 
 
     <CheckBox

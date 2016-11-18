@@ -1,5 +1,6 @@
 package com.party.party;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,20 @@ public class Login extends AppCompatActivity {
     private RequestQueue requestQueue;
     private static final String URL = "http://partyiftm.16mb.com/login/user_control.php";
     private StringRequest request;
+    final Context context = this;
+
+    int flag = 0;
+
+    public void mensagem(){
+        if(flag==0)
+        {
+            Toast.makeText(context, "Digite seu usuario e senha!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            System.out.println("ok");
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +78,8 @@ public class Login extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
+                        mensagem();
+
 
                     }
                 }, new Response.ErrorListener() {
@@ -73,11 +90,24 @@ public class Login extends AppCompatActivity {
                 }){
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
+
+                        if(!usuario.getText().toString().isEmpty() && !senha.getText().toString().isEmpty())
+                        {
+
+
                         HashMap<String,String> hashMap = new HashMap<String, String>();
                         hashMap.put("nome",usuario.getText().toString());
                         hashMap.put("senha",senha.getText().toString());
 
+                            flag=1;
+
                         return hashMap;
+                        }
+                        else
+                        {
+                            flag=0;
+                        }
+                        return null;
                     }
                 };
 

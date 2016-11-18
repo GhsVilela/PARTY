@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
         btnLocalizar.setOnClickListener(new View.OnClickListener(){
 
                                             public void onClick(View v) {
-                                                  Intent it = new Intent(MainActivity.this, LocalizacaoDispositivo.class);
+                                                  Intent it = new Intent(MainActivity.this, MapsActivity.class);
                                                 //Intent it = new Intent(getContext(), LocalizacaoDispositivo.class);
                                                 startActivity(it);
 
