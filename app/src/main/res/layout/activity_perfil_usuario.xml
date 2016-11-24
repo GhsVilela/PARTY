@@ -95,7 +95,7 @@
     <ImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
-        app:srcCompat="@drawable/iconTelefone"
+        app:srcCompat="@drawable/icontelefone"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/descricao"
         android:layout_marginBottom="145dp"
@@ -113,7 +113,7 @@
         android:layout_marginStart="9dp" />
 
     <Button
-        android:background="@drawable/btnEditarPerfil"
+        android:background="@drawable/btneditarperfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/editar_perfil"
@@ -122,7 +122,7 @@
         android:layout_marginBottom="9dp" />
 
     <Button
-        android:background="@drawable/btnCriarFesta"
+        android:background="@drawable/btncriarfesta"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:id="@+id/criar_festa"
