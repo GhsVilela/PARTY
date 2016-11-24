@@ -1,22 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#333">
+
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg"/>
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@drawable/foto"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="31dp"
+        android:id="@+id/foto"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-Vindo"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="#F176AD"
+        android:text="Nome Do Usuário"
+        android:id="@+id/nome_usuario"
+        android:textColor="#eee"
         android:textSize="24dp"
-        />
+        android:layout_marginBottom="19dp"
+        android:layout_marginStart="9dp"
+        android:layout_alignBottom="@+id/foto"
+        android:layout_toEndOf="@+id/foto" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/foto"
+        android:layout_marginTop="84dp"
+        android:background="#474646"
+        android:id="@+id/descricao"
+        android:layout_marginEnd="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="203dp"
+        android:layout_alignStart="@+id/foto"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="0.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="1.3"
+        android:scaleY="1.3"
+        android:textColor="#eee"
+        android:id="@+id/nota_text"
+        android:layout_above="@+id/descricao"
+        android:layout_alignEnd="@+id/nome_usuario" />
+
+    <TextView
+        android:text="Descrição"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#eee"
+        android:layout_below="@+id/nota_estrela"
+        android:layout_alignStart="@+id/descricao"
+        android:layout_marginTop="38dp"
+        android:id="@+id/textdesc" />
+
+    <TextView
+        android:text="Festas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#eee"
+        android:id="@+id/txtFestas"
+        android:layout_alignBottom="@+id/nota_estrela"
+        android:layout_alignEnd="@+id/descricao" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:rating="0"
+        android:id="@+id/nota_estrela"
+        android:layout_marginTop="12dp"
+        android:layout_alignTop="@+id/nome_usuario"
+        android:layout_toEndOf="@+id/textdesc" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#eee"
+        android:id="@+id/qtd_festas"
+        android:layout_alignBottom="@+id/nota_estrela"
+        android:layout_toStartOf="@+id/txtFestas" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/iconTelefone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/descricao"
+        android:layout_marginBottom="145dp"
+        android:id="@+id/icontele" />
+
+    <TextView
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textSize="20dp"
+        android:textColor="#eee"
+        android:id="@+id/contato"
+        android:layout_alignBottom="@+id/icontele"
+        android:layout_toEndOf="@+id/icontele"
+        android:layout_marginStart="9dp" />
+
+    <Button
+        android:background="@drawable/btnEditarPerfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/editar_perfil"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/qtd_festas"
+        android:layout_marginBottom="9dp" />
+
+    <Button
+        android:background="@drawable/btnCriarFesta"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:id="@+id/criar_festa"
+        android:layout_alignTop="@+id/editar_perfil"
+        android:layout_alignStart="@+id/icontele" />
 
 
 </RelativeLayout>
