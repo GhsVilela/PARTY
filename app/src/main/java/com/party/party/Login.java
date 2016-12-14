@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             if(jsonObject.names().get(0).equals("success")){
                                 Toast.makeText(getApplicationContext(),"Sucesso! "+jsonObject.getString("success"),Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),PerfilUsuario.class));
+                                startActivity(new Intent(getApplicationContext(),Logado.class));
                             }else {
                                 Toast.makeText(getApplicationContext(), "Erro! " +jsonObject.getString("error"), Toast.LENGTH_SHORT).show();
                             }

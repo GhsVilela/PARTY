@@ -19,7 +19,6 @@
 
     <Button
         android:id="@+id/botao_ponto_maps"
-
         android:background="@drawable/ponto"
         android:layout_width="150dp"
         android:layout_height="150dp"
