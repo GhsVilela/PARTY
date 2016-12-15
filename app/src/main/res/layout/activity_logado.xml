@@ -33,14 +33,6 @@
         android:layout_centerHorizontal="true"
         tools:ignore="HardcodedText" />
 
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_height="50dp"
         android:layout_width="55dp"
@@ -79,7 +71,9 @@
         android:background="@drawable/bg"
         android:contentDescription=""
         tools:ignore="ContentDescription,UnknownIdInLayout"
-        android:layout_alignEnd="@+id/imageView11" />
+        android:layout_below="@+id/tool_bar"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp" />
 
 
 </RelativeLayout>

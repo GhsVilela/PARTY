@@ -2,11 +2,11 @@
     <string name="app_name">PARTY</string>
     <string name="title_activity_maps">Mapa - Eventos</string>
     <string name="title_activity_logado">Bem-Vindo</string>
-    <string name="map_type_none">None</string>
+    <string name="map_type_none">Nenhum</string>
     <string name="map_type_normal">Normal</string>
-    <string name="map_type_terrain">Terrain</string>
-    <string name="map_type_satellite">Satellite</string>
-    <string name="map_type_hybrid">Hybrid</string>
+    <string name="map_type_terrain">Terreno</string>
+    <string name="map_type_satellite">Satelite</string>
+    <string name="map_type_hybrid">Hibrido</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>

@@ -36,7 +36,9 @@
         <activity android:name=".Registro" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".TermosDeUso" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".PerfilUsuario" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".Logado" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".Logado"  android:label="@string/title_activity_logado"/>
+        <activity android:name=".EditarFesta" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".EditarPerfil" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
