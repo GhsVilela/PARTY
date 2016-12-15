@@ -39,7 +39,13 @@ public class Logado extends AppCompatActivity {
         perfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),PerfilUsuario.class));
+                startActivity(new Intent(getApplicationContext(),EditarPerfil.class));
+            }
+        });
+        criarEvento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),EditarFesta.class));
             }
         });
     }

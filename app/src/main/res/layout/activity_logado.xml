@@ -11,52 +11,6 @@
     android:orientation="vertical"
     android:layout_centerVertical="true">
 
-    <include
-        android:id="@+id/tool_bar"
-        layout="@layout/tool_bar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonmapa"
-        android:background="#F176AD"
-        android:text="MAPA"
-        android:textColor="#fff"
-        android:layout_marginBottom="47dp"
-        android:layout_above="@+id/buttonsair"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="22dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttoncriarevento"
-        android:background="#F176AD"
-        android:text="CRIAR EVENTO"
-        android:textColor="#fff"
-        android:layout_alignBaseline="@+id/buttonmapa"
-        android:layout_alignBottom="@+id/buttonmapa"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="12dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/buttonmapa"
-        android:layout_alignEnd="@+id/buttonsair"
-        android:id="@+id/buttonperfil"
-        android:background="#F176AD"
-        android:text="PERFIL"
-        android:textColor="#fff"
-        />
-
     <ImageView
 
         android:background="@drawable/logo"
@@ -64,7 +18,8 @@
         android:layout_height="28dp"
         android:layout_marginTop="7dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:layout_width="wrap_content"
@@ -75,7 +30,56 @@
         android:text="SAIR"
         android:textColor="#fff"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/tool_bar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="55dp"
+        android:id="@+id/buttoncriarevento"
+        android:background="@drawable/btncriarfesta"
+        android:textColor="#fff"
+
+        tools:ignore="UnknownIdInLayout"
+        android:layout_marginBottom="43dp"
+        android:layout_alignStart="@+id/buttonperfil"
+        android:layout_above="@+id/buttonperfil" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonperfil"
+        android:background="@drawable/foto"
+        android:textColor="#fff"
+        android:layout_marginBottom="41dp"
+        android:layout_above="@+id/buttonsair"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonmapa"
+        android:background="@drawable/botaopequeno"
+        android:textColor="#fff"
+        android:layout_marginBottom="42dp"
+        android:layout_above="@+id/buttoncriarevento"
+        android:layout_alignStart="@+id/buttoncriarevento" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:contentDescription=""
+        tools:ignore="ContentDescription,UnknownIdInLayout"
+        android:layout_alignEnd="@+id/imageView11" />
 
 
 </RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#333">
+
+
+    <Button
+        android:background="@drawable/btnconfirmar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="22dp"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome Da Festa"
+        android:id="@+id/nome_usuario"
+        android:textColor="#eee"
+        android:textSize="24dp"
+        android:layout_marginTop="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@+id/button2"
+        tools:ignore="HardcodedText,LabelFor,SpUsage,TextFields" />
+
+    <TextView
+        android:text="Descrição"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#eee"
+        android:id="@+id/textdesc"
+        android:layout_below="@+id/nome_usuario"
+        android:layout_alignStart="@+id/nome_usuario"
+        android:layout_marginTop="12dp"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#474646"
+        android:id="@+id/descricao"
+        android:layout_marginEnd="37dp"
+        android:layout_marginBottom="209dp"
+        android:layout_alignStart="@+id/nome_usuario"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textdesc"
+        android:layout_above="@+id/button2"
+        tools:ignore="LabelFor,TextFields" />
+
+    <TextView
+        android:text="Local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textdesc"
+        android:textColor="#eee"
+        android:layout_alignStart="@+id/descricao"
+        android:layout_marginTop="164dp"
+        android:id="@+id/textloca"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textloca"
+        android:id="@+id/textView3"
+        android:background="#474646"
+        android:layout_above="@+id/button2"
+        android:layout_alignEnd="@+id/descricao"
+        android:layout_marginBottom="20dp"
+        android:layout_alignStart="@+id/textloca" />
+
+
+</RelativeLayout>
