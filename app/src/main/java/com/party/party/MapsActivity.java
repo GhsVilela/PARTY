@@ -1,120 +1,105 @@
 package com.party.party;
 
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
+import android.app.Dialog;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    /**
-     * Mapa da aplicação
-     */
-    private GoogleMap mMap;
-
-    /**
-     * Responsável por disponibilizar a localização do smartphone.smartphone
-     */
-    private GoogleApiClient mGoogleApiClient;
-
-    /**
-     * Guarda a ultima posição do smartphone.
-     */
-    private Location mLastLocation;
+    GoogleMap mGoogleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-
-        // Vamos instanciar o GoogleApiClient, caso seja nulo
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this) // Interface ConnectionCallbacks
-                    .addOnConnectionFailedListener(this) //Interface OnConnectionFailedListener
-                    .addApi(LocationServices.API) // Vamos a API do LocationServices
-                    .build();
+        if(googleServicesAvaible()){
+            Toast.makeText(this, "Perfeito!!!!", Toast.LENGTH_LONG).show();
+            setContentView(R.layout.activity_maps);
+            initMap();
+        }
+        else
+        {
+            //No Google Maps Layout
         }
     }
 
-    /*
-     * Ao iniciar, connectamos !
-     */
-    protected void onStart() {
-        mGoogleApiClient.connect();
-        super.onStart();
+    private void initMap(){
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mapFragment);
+        mapFragment.getMapAsync(this);
+
     }
 
-    /*
-      * Ao finalizar, desconectamos!
-     */
-    protected void onStop() {
-        mGoogleApiClient.disconnect();
-        super.onStop();
-    }
+    public boolean googleServicesAvaible(){
 
+        GoogleApiAvailability api = GoogleApiAvailability.getInstance();
+        int isAvaible = api.isGooglePlayServicesAvailable(this);
+
+        if(isAvaible == ConnectionResult.SUCCESS){
+            return true;
+        }
+        else if(api.isUserResolvableError(isAvaible))
+        {
+            Dialog dialog = api.getErrorDialog(this, isAvaible, 0);
+            dialog.show();
+        }
+        else
+        {
+            Toast.makeText(this, "Não foi possivel conectar com play services", Toast.LENGTH_LONG).show();
+        }
+        return false;
+    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        mGoogleMap = googleMap;
+        goToLocationZoom(-19.01833, -49.480405, 15);
     }
 
-
-    /*
-     * Método invocado quando o GoogleApiClient conseguir se conectar
-     */
-    @Override
-    public void onConnected(Bundle bundle) {
-        // pegamos a ultima localização
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        if (mLastLocation != null) {
-            if(mMap != null){
-                // Criamos o LatLng através do Location
-                final LatLng latLng = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                // Adicionamos um Marker com a posição...
-                mMap.addMarker(new MarkerOptions().position(latLng).title("Minha Posição"));
-                // Um zoom no mapa para a seua posição atual...
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
-
-            }
-
-        }
+    private void goToLocation(double lat, double lng) {
+        LatLng ll = new LatLng(lat, lng);
+        CameraUpdate update = CameraUpdateFactory.newLatLng(ll);
+        mGoogleMap.moveCamera(update);
     }
 
-    @Override
-    public void onConnectionSuspended(int i) {
-
+    private void goToLocationZoom(double lat, double lng, float zoom) {
+        LatLng ll = new LatLng(lat, lng);
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom(ll, zoom);
+        mGoogleMap.moveCamera(update);
     }
 
-    /*
-     * Neste método você deverá tratar caso não consiga se conncetar...
-     */
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
+    public void geoLocate(View view) throws IOException {
+        EditText editText = (EditText) findViewById(R.id.editTextMaps);
+        String location = editText.getText().toString();
+
+        Geocoder gc = new Geocoder(this);
+        List<android.location.Address> list = gc.getFromLocationName(location, 1);
+        android.location.Address address = list.get(0);
+
+        String localizacao = address.getLocality();
+
+        Toast.makeText(this, localizacao, Toast.LENGTH_LONG).show();
+
+        double lat = address.getLatitude();
+        double lng = address.getLongitude();
+        goToLocationZoom(lat, lng, 15);
+
+
 
     }
 }

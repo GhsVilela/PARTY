@@ -1,8 +1,57 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:id="@+id/activity_maps"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.party.party.MapsActivity" />
+    android:paddingLeft="-5dp"
+    android:paddingRight="-5dp"
+    tools:context="com.party.party.MapsActivity"
+    android:orientation="vertical"
+    android:layout_centerVertical="true">
+
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"/>
+
+
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="textPersonName"
+    android:ems="10"
+    android:id="@+id/editTextMaps"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:hint="Onde você quer festar?" />
+
+<Button
+    android:text="Go"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/buttonMaps"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@+id/editTextMaps"
+    android:onClick="geoLocate"
+    android:background="#F176AD"
+    android:textColor="#fff" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/buttonMaps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.MapFragment"
+        tools:layout="@layout/activity_maps" />
+</RelativeLayout>
+
+
+
